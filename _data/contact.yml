@@ -1,0 +1,29 @@
+#  The contact options.
+
+- type: github-jrdspace
+  icon: "fab fa-github"
+  url: "https://github.com/JRDspace"
+
+- type: instagram
+  icon: "fab fa-instagram"
+  url: "https://www.instagram.com/wheellog/"
+
+- type: youtube
+  icon: "fab fa-youtube"
+  url: "https://www.youtube.com/@Wheellogyt"
+
+- type: linkedin
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/janakirajeshduvvuri/"
+
+- type: buy-me-a-book
+  icon: "fas fa-book"
+  url: "https://buymeacoffee.com/janakirajeshd"
+
+- type: email
+  icon: "fas fa-envelope"
+  noblank: true # open link in current tab
+
+- type: rss
+  icon: "fas fa-rss"
+  noblank: true

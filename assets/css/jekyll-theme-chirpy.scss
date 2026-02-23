@@ -1,0 +1,174 @@
+---
+---
+
+@use "main";
+
+/* Hide the decorative divider dot between sidebar icons */
+#sidebar .sidebar-bottom .icon-border {
+  display: none !important;
+}
+
+/* Keep spacing between mode toggle and first social icon */
+#sidebar .sidebar-bottom #mode-toggle {
+  margin-right: 0.8rem !important;
+}
+
+@media all and (min-width: 1650px) {
+  #sidebar .sidebar-bottom #mode-toggle {
+    margin-right: 1rem !important;
+  }
+}
+
+/* Slightly reduce sidebar site title size */
+#sidebar .site-title {
+  font-size: 1.55rem !important;
+}
+
+
+/* Camerawork gallery */
+.camerawork-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.camerawork-item {
+  margin: 0;
+  border-radius: 0.65rem;
+  overflow: hidden;
+  background: var(--card-bg);
+}
+
+.camerawork-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.camerawork-link {
+  display: block;
+}
+
+.camerawork-link img {
+  transition: transform 0.2s ease;
+}
+
+.camerawork-link:hover img {
+  transform: scale(1.03);
+}
+
+.camerawork-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.camerawork-lightbox img {
+  max-width: min(96vw, 1400px);
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.camerawork-close,
+.camerawork-nav {
+  position: fixed;
+  border: 0;
+  background: rgba(20, 20, 20, 0.55);
+  color: #fff;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.camerawork-close {
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  font-size: 1.6rem;
+}
+
+.camerawork-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.6rem;
+  height: 3.2rem;
+  border-radius: 0.4rem;
+  font-size: 1.5rem;
+}
+
+.camerawork-nav.prev {
+  left: 1rem;
+}
+
+.camerawork-nav.next {
+  right: 1rem;
+}
+/* Videos grid */
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.video-card {
+  display: block;
+  text-decoration: none;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--main-border-color);
+}
+
+.video-card img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.video-card h3 {
+  margin: 0;
+  padding: 0.7rem 0.8rem 0.85rem;
+  font-size: 0.98rem;
+  line-height: 1.35;
+  color: var(--heading-color);
+}
+
+.videos-channel-link {
+  margin-top: 1rem;
+}
+/* Live projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.project-card {
+  border: 1px solid var(--main-border-color);
+  border-radius: 0.8rem;
+  padding: 1rem;
+  background: var(--card-bg);
+}
+
+.project-card h3 {
+  margin-top: 0;
+}
+
+.project-card p {
+  margin-bottom: 0.8rem;
+}
+
+.project-card ul {
+  margin: 0 0 0.9rem 1.15rem;
+}
