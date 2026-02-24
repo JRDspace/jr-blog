@@ -1,7 +1,12 @@
 ---
 ---
 
-@use "main";
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
 
 /* Hide the decorative divider dot between sidebar icons */
 #sidebar .sidebar-bottom .icon-border {
@@ -195,4 +200,5 @@ nav li,
 .project-card ul {
   margin: 0 0 0.9rem 1.15rem;
 }
+
 
