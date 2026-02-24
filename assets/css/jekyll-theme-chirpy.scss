@@ -203,40 +203,8 @@ nav li,
 
 
 
-/* Home cooking card */
-.cooking-card {
-  border: 1px solid var(--main-border-color);
-  border-radius: 0.9rem;
-  padding: 1rem 1.05rem 1.05rem;
-  margin: 0 0 1rem;
-  background: var(--card-bg);
-}
 
-.cooking-card__kicker {
-  margin: 0;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-muted-color);
-}
 
-.cooking-card__title {
-  margin: 0.25rem 0 0.55rem;
-  font-size: 1.22rem;
-  line-height: 1.25;
-}
 
-.cooking-card__list {
-  margin: 0;
-  padding-left: 0;
-  list-style: none;
-}
 
-.cooking-card__list li + li {
-  margin-top: 0.35rem;
-}
-
-.cooking-card__accent { color: #0a66c2; font-weight: 700; }
-
-
 
