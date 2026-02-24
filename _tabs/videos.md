@@ -22,7 +22,7 @@ Latest videos from my YouTube channel.
   const loading = document.getElementById('videos-loading');
   if (!grid) return;
 
-  const DATA_URL = '/assets/data/wheellogyt-videos.json';
+  const DATA_URL = '{{ '/assets/data/wheellogyt-videos.json' | relative_url }}';
 
   const thumbCandidates = (id, first) => {
     const list = [];
