@@ -1,0 +1,21 @@
+<script>
+(() => {
+  const v = '{{ site.time | date: "%s" }}';
+  const css = document.querySelector('link[href*="jekyll-theme-chirpy.css"]');
+  if (css && !css.href.includes('?v=')) {
+    css.href = `${css.href}?v=${v}`;
+  }
+
+  const scripts = [
+    'script[src*="/assets/js/dist/theme.min.js"]',
+    'script[src*="/assets/js/dist/page.min.js"]'
+  ];
+
+  scripts.forEach((selector) => {
+    const el = document.querySelector(selector);
+    if (el && el.src && !el.src.includes('?v=')) {
+      el.src = `${el.src}?v=${v}`;
+    }
+  });
+})();
+</script>
