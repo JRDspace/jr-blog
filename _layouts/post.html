@@ -1,12 +1,10 @@
-﻿---
+---
 layout: default
 panel_includes:
   - toc
 tail_includes:
   - related-posts
   - post-nav
-script_includes:
-  - comment
 ---
 
 {% include lang.html %}
@@ -189,6 +187,26 @@ script_includes:
     </div>
     <!-- .post-tail-bottom -->
   </div>
+  {% if page.comments and site.comments.provider == 'disqus' and site.comments.disqus.shortname %}
+    <section id="comments" class="pt-5">
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+          this.page.url = '{{ page.url | absolute_url }}';
+          this.page.identifier = '{{ page.url }}';
+        };
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://{{ site.comments.disqus.shortname }}.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </section>
+  {% endif %}
   <!-- div.post-tail-wrapper -->
 </article>
+
+
 
