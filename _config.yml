@@ -111,7 +111,7 @@ comments:
   provider: disqus # [disqus | utterances | giscus]
   # The provider options are as follows:
   disqus:
-    shortname: janakirajeshduvvuri # Disqus shortname
+    shortname: janakirajesh # Disqus shortname
   # utterances settings › https://utteranc.es/
   utterances:
     repo: JRDspace/jr-blog # <gh-username>/<repo>
@@ -224,6 +224,7 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
 
 
 
