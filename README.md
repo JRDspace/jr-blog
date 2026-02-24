@@ -1,8 +1,5 @@
-﻿# JRDspace Blog
+# JRD's Blog
 
-Personal blog of Janaki Rajesh.D, built with Jekyll + Chirpy.
+Just my blog, nothing else.
 
-## License
-
-Project code/theme usage follows MIT terms from the upstream Chirpy starter/theme.
-Content (posts/images) belongs to the author.
+Modified [theme](https://chirpy.cotes.page/).
