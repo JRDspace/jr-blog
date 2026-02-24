@@ -24,6 +24,26 @@
   font-size: 1.55rem !important;
 }
 
+/* Ensure menu/nav lists never render browser bullets */
+#sidebar ul,
+#sidebar ol,
+#topbar ul,
+#panel-wrapper ul,
+nav ul,
+nav ol,
+.nav {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+#sidebar li::marker,
+#topbar li::marker,
+#panel-wrapper li::marker,
+nav li::marker,
+.nav li::marker {
+  content: "";
+}
 
 /* Camerawork gallery */
 .camerawork-grid {
