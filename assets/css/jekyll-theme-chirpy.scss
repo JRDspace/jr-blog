@@ -37,12 +37,15 @@ nav ol,
   margin-left: 0 !important;
 }
 
-#sidebar li::marker,
-#topbar li::marker,
-#panel-wrapper li::marker,
-nav li::marker,
-.nav li::marker {
-  content: "";
+
+#sidebar li,
+#sidebar .nav-item,
+#topbar li,
+#panel-wrapper li,
+nav li,
+.nav li {
+  list-style: none !important;
+  list-style-type: none !important;
 }
 
 /* Camerawork gallery */
@@ -192,3 +195,4 @@ nav li::marker,
 .project-card ul {
   margin: 0 0 0.9rem 1.15rem;
 }
+
