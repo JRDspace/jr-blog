@@ -65,3 +65,36 @@ html:not(.css-ready) body {
   setTimeout(ready, 3000);
 })();
 </script>
+
+<script>
+/* Override theme's pageviews fallback (which shows 1 on error).
+   Show only real GoatCounter values; show '-' when unavailable. */
+document.addEventListener('DOMContentLoaded', async () => {
+  const pv = document.getElementById('pageviews');
+  if (!pv) return;
+
+  pv.textContent = '-';
+
+  const pathFromGoat = window.goatcounter && typeof window.goatcounter.get_data === 'function'
+    ? window.goatcounter.get_data().p
+    : location.pathname.replace(/\/$/, '');
+
+  const site = '{{ site.analytics.goatcounter.id }}';
+  const path = String(pathFromGoat || location.pathname.replace(/\/$/, '')).replace(/^https?:\/\/[^/]+/i, '');
+  const endpoint = `https://${site}.goatcounter.com/counter/${encodeURIComponent(path)}.json`;
+
+  try {
+    const res = await fetch(endpoint, { cache: 'no-store' });
+    if (!res.ok) return;
+
+    const data = await res.json();
+    const raw = data && (data.count ?? data.total ?? data.visits);
+    const count = Number(raw);
+    if (!Number.isFinite(count)) return;
+
+    pv.textContent = new Intl.NumberFormat().format(count);
+  } catch (_) {
+    // Keep '-' on failure.
+  }
+});
+</script>
