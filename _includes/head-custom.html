@@ -1,1 +1,11 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+<style>
+#topbar #breadcrumb span:not(:last-child)::after {
+  content: "/" !important;
+  padding: 0 .3rem !important;
+  font-family: inherit !important;
+}
+#topbar #breadcrumb span + span::before,
+#breadcrumb span + span::before {
+  content: none !important;
+}
+</style>
