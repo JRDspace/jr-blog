@@ -19,3 +19,49 @@
   });
 })();
 </script>
+
+<style>
+/* Prevent flash of unstyled content until theme CSS is available */
+html:not(.css-ready) body {
+  visibility: hidden;
+}
+
+/* Breadcrumb separator rendered as plain ASCII slash */
+#topbar #breadcrumb span:not(:last-child)::after {
+  content: "/" !important;
+  padding: 0 .3rem !important;
+  font-family: inherit !important;
+}
+#topbar #breadcrumb span + span::before,
+#breadcrumb span + span::before {
+  content: none !important;
+}
+</style>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  const ready = () => root.classList.add('css-ready');
+
+  const hasThemeCss = () => {
+    for (const sheet of document.styleSheets) {
+      const href = sheet && sheet.href ? String(sheet.href) : '';
+      if (href.includes('/assets/css/jekyll-theme-chirpy.css')) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+  const waitForThemeCss = () => {
+    if (hasThemeCss()) {
+      ready();
+      return;
+    }
+    requestAnimationFrame(waitForThemeCss);
+  };
+
+  waitForThemeCss();
+  setTimeout(ready, 3000);
+})();
+</script>
