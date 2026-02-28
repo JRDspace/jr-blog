@@ -1,4 +1,9 @@
 <style>
+/* Prevent flash of unstyled content until the theme CSS is available */
+html:not(.css-ready) body {
+  visibility: hidden;
+}
+
 #topbar #breadcrumb span:not(:last-child)::after {
   content: "/" !important;
   padding: 0 .3rem !important;
@@ -9,3 +14,31 @@
   content: none !important;
 }
 </style>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  const ready = () => root.classList.add('css-ready');
+
+  const hasThemeCss = () => {
+    for (const sheet of document.styleSheets) {
+      const href = sheet && sheet.href ? String(sheet.href) : '';
+      if (href.includes('/assets/css/jekyll-theme-chirpy.css')) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+  const waitForThemeCss = () => {
+    if (hasThemeCss()) {
+      ready();
+      return;
+    }
+    requestAnimationFrame(waitForThemeCss);
+  };
+
+  waitForThemeCss();
+  setTimeout(ready, 3000);
+})();
+</script>
