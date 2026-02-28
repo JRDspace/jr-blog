@@ -93,8 +93,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!Number.isFinite(count)) return;
 
     pv.textContent = new Intl.NumberFormat().format(count);
-  } catch (_) {
-    // Keep '-' on failure.
-  }
+  } catch (_) {}
 });
 </script>
+
