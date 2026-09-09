@@ -175,6 +175,58 @@ nav li,
 .videos-channel-link {
   margin-top: 1rem;
 }
+
+/* Typography for the new-age poets essay. */
+.content .poets-essay {
+  font-size: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  line-height: 1.85;
+
+  > p {
+    margin-bottom: 1.4em;
+  }
+
+  strong {
+    color: var(--heading-color);
+    font-weight: 650;
+  }
+
+  .essay-lead {
+    font-size: clamp(1.2rem, 1.08rem + 0.6vw, 1.5rem);
+    line-height: 1.6;
+    margin-block: 1.6em;
+  }
+
+  .essay-highlight {
+    border-inline-start: 3px solid #c84a4a;
+    padding: 0.65em 1em;
+    margin-block: 1.8em;
+    background: rgba(200, 74, 74, 0.07);
+    color: var(--heading-color);
+    font-size: clamp(1.2rem, 1.05rem + 0.65vw, 1.5rem);
+    line-height: 1.6;
+  }
+
+  .essay-poem {
+    border: 0;
+    border-block: 1px solid #c84a4a;
+    background: rgba(200, 74, 74, 0.07);
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.5rem 0.75rem;
+    text-align: center;
+    color: var(--heading-color);
+    font-family: 'Nirmala UI', 'Noto Sans Telugu', Gautami, sans-serif;
+    font-size: clamp(1.3rem, 1rem + 1.2vw, 1.9rem);
+    line-height: 2;
+    font-style: normal;
+
+    p {
+      margin: 0;
+      font-size: inherit;
+      line-height: inherit;
+    }
+  }
+}
+
 /* Live projects */
 .projects-grid {
   display: grid;
